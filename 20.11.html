@@ -25,7 +25,7 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin-right: 20px;
+            margin-left: 20px; /* Change margin-left to separate the calculator from the login form */
         }
 
         #login-form {
@@ -44,6 +44,16 @@
     </h1>
 
     <div id="calculator-container">
+        <div id="login-form">
+            <h2>Login</h2>
+            <form name="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button onclick="validateLogin()">Login</button>
+            </form>
+        </div>
         <div id="calculator">
             <form name="calculator">
                 <input type="text" name="display" id="display" readonly>
@@ -67,16 +77,6 @@
                 <input type="button" value="0" onclick="appendToDisplay('0')">
                 <input type="button" value="=" onclick="calculate()">
                 <input type="button" value="/" onclick="appendToDisplay('/')">
-            </form>
-        </div>
-        <div id="login-form">
-            <h2>Login</h2>
-            <form name="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                <button onclick="validateLogin()">Login</button>
             </form>
         </div>
     </div>

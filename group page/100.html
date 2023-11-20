@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Start calculating</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>
+        <img src="calc test page/gucci_PNG16.png" alt="Logo"
+            style="vertical-align: middle; width: 200px; height: auto;">
+    </h1>
+
+    <div id="login-form">
+        <h2>Login</h2>
+        <form name="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button onclick="validateLogin()">Login</button>
+        </form>
+    </div>
+
+    <div id="calculator-container">
+        <div id="calculator">
+            <form name="calculator">
+                <input type="text" name="display" id="display" readonly>
+                <br>
+                <input type="button" value="1" onclick="appendToDisplay('1')">
+                <input type="button" value="2" onclick="appendToDisplay('2')">
+                <!-- Add more calculator buttons here -->
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
