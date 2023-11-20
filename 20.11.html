@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Start calculating</title>
+</head>
+
+<body>
+    <h1>
+        <img src="calc test page/gucci_PNG16.png" alt="Logo"
+            style="vertical-align: middle; width: 200px; height: auto;">
+    </h1>
+
+    <script>
+        // Define an object to store usernames and passwords
+        var userCredentials = {
+            "user1": "password1",
+            "user2": "password2",
+            "user3": "password3",
+            "user4": "password4",
+            "user5": "password5",
+            "user6": "password6",
+            "user7": "password7",
+            "user8": "password8",
+            "user9": "password9",
+            "user10": "password10"
+        };
+
+        // Ask the user for a username and password
+        var enteredUsername = prompt("Enter your username:");
+        var enteredPassword = prompt("Enter your password:");
+
+        // Check if the entered username and password are valid
+        if (userCredentials[enteredUsername] === enteredPassword) {
+            // Username and password are correct, show the calculator
+            document.write('<form name="calculator">');
+            document.write('<input type="text" name="display" id="display" readonly>');
+            document.write('<br>');
+            document.write('<input type="button" value="1" onclick="appendToDisplay(\'1\')">');
+            document.write('<input type="button" value="2" onclick="appendToDisplay(\'2\')">');
+            document.write('<input type="button" value="3" onclick="appendToDisplay(\'3\')">');
+            document.write('<input type="button" value="+" onclick="appendToDisplay(\'+\')">');
+            document.write('<br>');
+            document.write('<input type="button" value="4" onclick="appendToDisplay(\'4\')">');
+            document.write('<input type="button" value="5" onclick="appendToDisplay(\'5\')">');
+            document.write('<input type="button" value="6" onclick="appendToDisplay(\'6\')">');
+            document.write('<input type="button" value="-" onclick="appendToDisplay(\'-\')">');
+            document.write('<br>');
+            document.write('<input type="button" value="7" onclick="appendToDisplay(\'7\')">');
+            document.write('<input type="button" value="8" onclick="appendToDisplay(\'8\')">');
+            document.write('<input type="button" value="9" onclick="appendToDisplay(\'9\')">');
+            document.write('<input type="button" value="*" onclick="appendToDisplay(\'*\')">');
+            document.write('<br>');
+            document.write('<input type="button" value="C" onclick="clearDisplay()">');
+            document.write('<input type="button" value="0" onclick="appendToDisplay(\'0\')">');
+            document.write('<input type="button" value="=" onclick="calculate()">');
+            document.write('<input type="button" value="/" onclick="appendToDisplay(\'/\')">');
+            document.write('</form>');
+        } else {
+            // Username and password are incorrect, display a message
+            alert("Incorrect username or password. Access denied.");
+        }
+
+        function appendToDisplay(value) {
+            document.calculator.display.value += value;
+        }
+
+        function clearDisplay() {
+            document.calculator.display.value = '';
+        }
+
+        function calculate() {
+            try {
+                document.calculator.display.value = eval(document.calculator.display.value);
+            } catch (error) {
+                document.calculator.display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html>
