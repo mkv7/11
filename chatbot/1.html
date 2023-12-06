@@ -1,52 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>3D Animation Background</title>
   <link rel="stylesheet" type="text/css" href="1.css">
+  <style>
+    body, html { margin: 0; height: 100%; overflow: hidden; }
+    .background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .content { position: relative; z-index: 1; }
+  </style>
+  <script src="https://threejs.org/build/three.js"></script>
 </head>
 <body>
-  <div class="login-container" id="login-container">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="login-button">Login</button>
-    <p id="login-error" style="color: rgb(0, 255, 106); display: none;">Invalid username or password</p>
+  <div class="background" id="background"></div>
+
+  <div class="content">
+    <!-- Your existing HTML code for the login and chatbot -->
+    <div class="login-container" id="login-container">
+      <!-- ... login form ... -->
+      
+    </div>
+
+    <div class="chat-container" id="chat-container" style="display: none;">
+      <!-- ... chatbot content ... -->
+    </div>
   </div>
 
-  <!-- Chat Container (Initially Hidden) -->
-  <div class="chat-container" id="chat-container" style="display: none;">
-    <!-- Existing Chatbot HTML Code -->
-  <div class="chat-container">
-    <div class="chat-header">
-      <h2>Chatbot</h2>
-    </div>
-    <div class="chat-log" id="chat-log">
-      <!-- Chat messages will be displayed here -->
-    </div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Type your message..." />
-      <button id="send-button">Send</button>
-    </div>
-
-    <!-- Rating System -->
-    <div class="rating-system">
-      <p>Rate your experience:</p>
-      <div>
-        <input type="radio" id="rating-1" name="rating" value="1">
-        <label for="rating-1">1</label>
-        <input type="radio" id="rating-2" name="rating" value="2">
-        <label for="rating-2">2</label>
-        <input type="radio" id="rating-3" name="rating" value="3">
-        <label for="rating-3">3</label>
-        <input type="radio" id="rating-4" name="rating" value="4">
-        <label for="rating-4">4</label>
-        <input type="radio" id="rating-5" name="rating" value="5">
-        <label for="rating-5">5</label>
-      </div>
-      <button id="rate-button">Submit Rating</button>
-    </div>
-
-  </div>
-
+  <!-- Your JavaScript Files -->
+  <script src="3d-animation.js"></script>
   <script src="1.js"></script>
 </body>
 </html>

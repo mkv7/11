@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (username === 'admin' && password === '1234') {
       loginContainer.style.display = 'none';
       chatContainer.style.display = 'block';
+      stopAnimation();
     } else {
       loginError.style.display = 'block';
     }
